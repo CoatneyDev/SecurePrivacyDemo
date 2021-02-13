@@ -1,0 +1,149 @@
+<ng-template #content let-modal>
+    <div class="card border-0">
+      <div class="card-body">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-basic-title">
+            Can we store cookies?
+          </h3>
+          <button
+            type="button"
+            class="close"
+            aria-label="Close"
+            (click)="modal.dismiss('Cross click')"
+          >
+            <span aria-hidden="true"
+              ><fa-icon [icon]="faTimes" class="text-dark fa-xs"></fa-icon
+            ></span>
+          </button>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            We and our partners use technologies, such as cookies, and process
+            personal data, such as IP addresses and cookie identifiers, to
+            personalize ads and content based on your interests, measure the
+            performance of ads and content, and derive insights about the
+            audiences who saw ads and content.
+          </p>
+          <p class="card-text">
+            Click below to consent to the use of this technology and the
+            processing of your personal data for these purposes. You can
+            change your mind and change your consent choices at any time by
+            returning to this site.
+          </p>
+          <p class="card-text">
+            You can familiarize with our
+            <a href="#"><strong>Privacy Policy</strong></a>
+          </p>
+          <button type="button" class="btn btn-success btn-main">
+            Accept All
+          </button>
+          <button type="button" class="btn text-dark btn-outline-secondary btn-main">
+            Save Settings
+          </button>
+          <button
+            type="button"
+            class="btn btn-link btn-settings text-dark float-right"
+            (click)="collapse.toggle()"
+            [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseSettings"
+          >
+            Customize &nbsp;
+            <fa-icon
+              [icon]="getCollapseIcon()"
+              class="text-dark fa-xs"
+            ></fa-icon>
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="modal-content border-0 rounded-0"
+        #collapse="ngbCollapse"
+        [(ngbCollapse)]="isCollapsed"
+      >
+        <ngb-accordion #a="ngbAccordion" activeIds="custom-panel-0">
+          <ngb-panel
+            *ngFor="let panel of panels; index as i"
+            id="{{ 'custom-panel-' + i }}"
+          >
+            <ng-template ngbPanelHeader let-opened="opened">
+              <div class="d-flex align-items-center justify-content-between">
+                <h5 class="m-0">
+                  <div class="custom-control custom-switch">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="{{ 'customSwitch' + i }}"
+                      checked
+                    />
+                    <label
+                      class="custom-control-label"
+                      for="{{ 'customSwitch' + i }}"
+                      >{{ panel.CategoyHeading }}</label
+                    >
+                  </div>
+                </h5>
+
+                <button ngbPanelToggle class="btn btn-link p-0">
+                  <fa-icon
+                    [icon]="iconToggle[i]"
+                    class="text-dark fa-xs"
+                    (click)="onToggleAccordion(i)"
+                  ></fa-icon>
+                </button>
+              </div>
+            </ng-template>
+            <ng-template ngbPanelContent>
+              {{ panel.CategoyText }}
+              <div class="plugin-grid">
+                <div class="row">
+                  <div class="col"><strong>Plugins</strong></div>
+                  <div class="col"><strong>Block/Enable</strong></div>
+                  <div class="col"></div>
+                  <div class="w-100"></div>
+                  <ng-container
+                    *ngFor="let plugin of panel.PluginList; index as j"
+                    class="col"
+                  >
+                    <div class="col">
+                      <small class="text-muted">
+                        {{ plugin.ComplianceType }}</small
+                      >
+                    </div>
+                    <div class="col">
+                      <div class="custom-control custom-switch">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="{{ 'customSwitch' + (100 * i + j + 100) }}"
+                          checked
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="{{ 'customSwitch' + (100 * i + j + 100) }}"
+                        ></label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <a href="https://{{ plugin.PluginDomain }}"
+                        >Go to site</a
+                      >
+                    </div>
+                    <div class="w-100"></div>
+                  </ng-container>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </div>
+  </ng-template>
+
+  <button class="btn btn-lg btn-success" (click)="open(content)">
+    Launch demo modal
+  </button>
+
+  <hr />
+
+  <pre>{{ closeResult }}</pre>

@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/secureprivacy",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

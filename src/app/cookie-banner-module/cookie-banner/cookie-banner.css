@@ -1,0 +1,46 @@
+.card.disabled {
+  opacity: 0.5;
+}
+.custom-control-label {
+  font-weight: bold;
+}
+ngb-accordion {
+  margin: 10px;
+}
+ngb-panel {
+  margin-top: 10px;
+}
+.modal-content {
+  background: linear-gradient(#ccc, #eee);
+}
+.modal-header {
+  border: 0;
+  padding: 0;
+}
+.modal-title {
+  font-weight: bold;
+}
+.modal-backdrop.fade {
+  opacity: 0.5;
+}
+.modal-open .modal {
+  opacity: 1;
+}
+.plugin-grid {
+  margin-top: 10px;
+}
+.btn-main {
+  min-width: 100px;
+  margin-right: 10px;
+}
+.btn-settings {
+  text-decoration: none !important;
+}
+.custom-control-input:checked ~ .custom-control-label::before {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
