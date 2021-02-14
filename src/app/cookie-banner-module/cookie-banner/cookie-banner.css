@@ -29,13 +29,39 @@ ngb-panel {
 .plugin-grid {
   margin-top: 10px;
 }
+
 .btn-main {
-  min-width: 100px;
-  margin-right: 10px;
+  
+ 
 }
 .btn-settings {
+  
   text-decoration: none !important;
 }
+
+.btn-block {
+  font-size: x-small;
+  margin: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .btn-block {
+    font-size: xx-small;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .btn-block {
+    font-size: x-small;
+  }
+}
+@media (max-width: 991.98px) {
+  .btn-block {
+    font-size: small;
+   
+  }
+}
+
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
   background-color: #28a745;

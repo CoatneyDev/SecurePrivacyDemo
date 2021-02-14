@@ -45,7 +45,6 @@ export class CookieBannerComponent implements AfterViewInit {
       data.accordian.forEach((element: AccordionPanel) => {
         this.panels.push(element);
         this.iconToggle.push(faCaretDown);
-        console.log(element);
       });
       this.iconToggle[0] = faCaretUp;
     });

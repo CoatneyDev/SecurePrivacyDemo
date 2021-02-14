@@ -34,15 +34,28 @@
             You can familiarize with our
             <a href="#"><strong>Privacy Policy</strong></a>
           </p>
-          <button type="button" class="btn btn-success btn-main">
-            Accept All
-          </button>
-          <button type="button" class="btn text-dark btn-outline-secondary btn-main">
-            Save Settings
-          </button>
-          <button
+
+
+<!---->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+            <button type="button" class="btn btn-success btn-main btn-block">
+                Accept All
+              </button>
+			
+		</div>
+		<div class="col-md-4">
+            <button type="button" class="btn text-dark btn-outline-secondary btn-main btn-block">
+                Save Settings
+              </button>
+			
+		</div>
+		<div class="col-md-4">
+			  
+            <button
             type="button"
-            class="btn btn-link btn-settings text-dark float-right"
+            class="btn btn-link btn-settings text-dark float-right btn-block"
             (click)="collapse.toggle()"
             [attr.aria-expanded]="!isCollapsed"
             aria-controls="collapseSettings"
@@ -53,6 +66,19 @@
               class="text-dark fa-xs"
             ></fa-icon>
           </button>
+			
+		</div>
+	</div>
+</div>
+<!---->
+
+
+         
+        
+         
+          
+         
+         
         </div>
       </div>
 
