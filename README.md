@@ -1,5 +1,5 @@
 # Secureprivacy
-Secure Privacy Demo is the deliverable for mockup provided for the purpose of skills assessment in job location.
+Secure Privacy Demo is the deliverable for mockup provided for the purpose of skills assessment in job location.git add 
 
 * App: https://privacydemo-911b7.firebaseapp.com/
 * Git: https://github.com/CoatneyDev/SecurePrivacyDemo

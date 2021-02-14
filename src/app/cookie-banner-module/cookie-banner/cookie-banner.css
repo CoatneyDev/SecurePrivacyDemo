@@ -31,7 +31,7 @@ ngb-panel {
 }
 
 .btn-main {
-  
+  min-width: 8rem;
  
 }
 .btn-settings {
@@ -40,13 +40,13 @@ ngb-panel {
 }
 
 .btn-block {
-  font-size: x-small;
-  margin: 2px;
+  font-size: small;
+  
 }
 
 @media (max-width: 575.98px) {
   .btn-block {
-    font-size: xx-small;
+    font-size: x-small;
   }
 }
 
@@ -58,7 +58,7 @@ ngb-panel {
 @media (max-width: 991.98px) {
   .btn-block {
     font-size: small;
-   
+   min-width: 100%;
   }
 }
 
